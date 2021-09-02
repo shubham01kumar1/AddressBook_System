@@ -23,7 +23,7 @@ public class AddressBookController {
             switch (choice) {
                 case 1:
                     service.addPerson();
-                    System.out.println("person added sucessfully");
+                    System.out.println(" person added sucessfully ");
                     break;
                 case 2:
                     service.print();
