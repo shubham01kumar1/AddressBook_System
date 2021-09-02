@@ -16,7 +16,7 @@ public class Address extends ArrayList<Address> {
     public Address() {
     }
     //parameterized constructor
-    public Address(String firstName, String lastNAme, long phoneNo, int zip, String city, String state, String email) {
+    public Address(String firstName, String lastName, long phoneNo, int zip, String city, String state, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNo = phoneNo;
@@ -35,7 +35,7 @@ public class Address extends ArrayList<Address> {
         this.firstName = firstName;
     }
 
-    public String getLastNAme() {
+    public String getLastName() {
         return lastName;
     }
 

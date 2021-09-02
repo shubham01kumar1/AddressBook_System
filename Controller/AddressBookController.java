@@ -18,7 +18,7 @@ public class AddressBookController {
         boolean exit = false;
 
         while(!exit) {
-            System.out.println("Enter your Choice:\n 1.Add Person\n 2.Get all Conatacts\n 3.Exit");
+            System.out.println("Enter your Choice:\n 1.Add contact\n 2.Edit an existing contact\n 3.Get all Contact list\n 4.Exit");
             int choice = Utility.readInteger();
             switch (choice) {
                 case 1:
@@ -26,9 +26,12 @@ public class AddressBookController {
                     System.out.println(" person added sucessfully ");
                     break;
                 case 2:
+                    service.editContact();
+                    break;
+                case 3:
                     service.print();
                     break;
-                case 3 :
+                case 4 :
                     exit=true;
                     break;
                 default:
