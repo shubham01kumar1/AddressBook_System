@@ -8,7 +8,13 @@ public class AddressBookService {
 
     private static ArrayList<Address> addressBookModel = new ArrayList<>();
 
-    // Add contact to addressbook
+    // To add a predefined dummy contact to addressbook ;
+    public void dummyAddCont(){
+        Address dummyPerson = new Address("Hrithik","Roshan",1234567890, 430245, "mumbai", "Maharashtra", "hritik@gmail.com");
+        addressBookModel.add(dummyPerson);
+    }
+
+    // Add contact to addressbook by User
     public void addPerson() {
 
         Address person = new Address();
@@ -50,13 +56,15 @@ public class AddressBookService {
 
         for (Address person : addressBookModel) {
             if (person.getFirstName().equals(name)) {
-                return person;
+                System.out.println("retrieving contacts from addressbook......");
+                System.out.println("is this the contact you are looking for?? " + person);
+                System.out.println("enter : y/n");
+                String inp = Utility.readString();
+                if (inp.equals("y") || inp.equals("Y"))
+                    return person;
             }
-            else {
-                System.out.println("Invalid name or no contact exist with this first name");
-            }
-
         }
+        System.out.println("Invalid name or no match found, plz try again");
         return null;
     }
 
@@ -126,7 +134,7 @@ public class AddressBookService {
                         person.setEmail(nEmail);
                         break;
                     case 8:
-                        exit=true;
+                        exit = true;
                         break;
                     default:
                         System.out.println("Invalid Input, plz choose from above options");
@@ -134,5 +142,19 @@ public class AddressBookService {
             }
         }
     }
+
+    //function to delete a contact from addressbook
+    public void deleteContact() {
+
+        System.out.println("Enter the first name of contact you want delete");
+        String fname = Utility.readString();
+
+        Address contact = getContact(fname);
+        if (contact != null) {
+            addressBookModel.remove(contact);
+            System.out.println("Contact deletion successful ");
+        }
+    }
+
 
 }

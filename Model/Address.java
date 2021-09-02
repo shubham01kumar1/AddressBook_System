@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 
 public class Address extends ArrayList<Address> {
-    //declearing all fields required of a contacts in AddressBook
+    //declaring all fields required of a contacts in AddressBook
     private String firstName;
     private String lastName;
     private long phoneNo;
