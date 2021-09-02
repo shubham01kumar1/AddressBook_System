@@ -27,7 +27,6 @@ public class AddressBookController {
             switch (choice) {
                 case 1:
                     service.addPerson();
-                    System.out.println(" person added successfully ");
                     break;
                 case 2:
                     service.editContact();

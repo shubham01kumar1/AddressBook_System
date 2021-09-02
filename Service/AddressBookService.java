@@ -14,42 +14,57 @@ public class AddressBookService {
         addressBookModel.add(dummyPerson);
     }
 
-    // Add contact to addressbook by User
+
+    // Add contacts to addressbook by User
     public void addPerson() {
 
-        Address person = new Address();
+        boolean addMultiContact = true;  //assuming user want to add multiple people;
+        while(addMultiContact) {
 
-        System.out.println("Enter Your First Name");
-        person.setFirstName(Utility.readString());
+            Address person = new Address();
 
-        System.out.println("Enter Your Last Name");
-        person.setLastName(Utility.readString());
+            System.out.println("Enter Your First Name");
+            person.setFirstName(Utility.readString());
 
-        System.out.println("Enter Your city Name");
-        person.setCity(Utility.readString());
+            System.out.println("Enter Your Last Name");
+            person.setLastName(Utility.readString());
 
-        System.out.println("Enter Your state Name");
-        person.setState(Utility.readString());
+            System.out.println("Enter Your city Name");
+            person.setCity(Utility.readString());
 
-        System.out.println("Enter Your phone Number");
-        person.setPhoneNo( Utility.readLong() );
+            System.out.println("Enter Your state Name");
+            person.setState(Utility.readString());
 
-        System.out.println("Enter Your zip");
-        person.setZip(Utility.readInteger());
+            System.out.println("Enter Your phone Number");
+            person.setPhoneNo(Utility.readLong());
 
-        System.out.println("Enter Your email");
-        person.setEmail(Utility.readString());
+            System.out.println("Enter Your zip");
+            person.setZip(Utility.readInteger());
 
-        addressBookModel.add(person);
+            System.out.println("Enter Your email");
+            person.setEmail(Utility.readString());
+
+            addressBookModel.add(person);
+            System.out.println(" person added successfully");
+
+            //asking user whether he wants to add more person/contact
+            System.out.println("Do you want to add another person???");
+            System.out.println("Enter y/n :");
+            String inp = Utility.readString();
+            if( inp.equals("n") || inp.equals("N") )
+                addMultiContact = false;
+        }
     }
+
 
     //printing all contacts
     public void print(){
 
-        for( Address items:addressBookModel){
+        for( Address items:addressBookModel ){
             System.out.println(items);
         }
     }
+
 
     //get specific contact with their first name from AddressBook
     private Address getContact(String name) {
@@ -143,6 +158,7 @@ public class AddressBookService {
         }
     }
 
+
     //function to delete a contact from addressbook
     public void deleteContact() {
 
@@ -155,6 +171,5 @@ public class AddressBookService {
             System.out.println("Contact deletion successful ");
         }
     }
-
 
 }

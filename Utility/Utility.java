@@ -29,4 +29,5 @@ public class Utility {
     public static float readFloat() {
         return scan.nextFloat();        //Scanner object to input Float
     }
+
 }
