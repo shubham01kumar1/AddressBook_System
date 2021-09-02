@@ -32,7 +32,7 @@ public class AddressBookController {
                     exit=true;
                     break;
                 default:
-                    System.out.println("Enter valid value");
+                    System.out.println("Enter valid value, plz enter again");
                     break;
             }
         }
